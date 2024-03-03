@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Import components
+import Header from "./components/Header";
+import Menu from "./components/Menu";
+import Footer from "./components/Footer";
+
+// Import pages
+import HomePage from "./pages/HomePage";
+import SportsPage from "./pages/SportsPage";
+import LeaguesPage from "./pages/LeaguesPage";
+import CalendarPage from "./pages/CalendarPage";
+import NRLPage from "./pages/league_pages/NRLPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <Header />
+        <Menu />
+
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/sports" element={<SportsPage />} />
+          <Route path="/leagues" element={<LeaguesPage />} />
+          <Route path="/calendar" element={<CalendarPage />} />
+          <Route path="/leagues/nrl" element={<NRLPage />} />
+        </Routes>
+
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

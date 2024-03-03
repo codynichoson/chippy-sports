@@ -1,3 +1,9 @@
+:root {
+  --brand-primary: #0e2752; /* Example primary color */
+  --brand-secondary: #632390; /* Example secondary color */
+  --brand-accent: #f9b019; /* Example accent color */
+}
+
 .App {
   text-align: center;
 }
