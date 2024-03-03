@@ -1,0 +1,47 @@
+.leagues-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.league-box {
+  text-decoration: none;
+  color: #000;
+  margin: 10px;
+}
+
+.rounded-rectangle {
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--brand-primary);
+  width: 500px;
+}
+
+.league-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.league-abbrev {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  font-size: 34px;
+  color: var(--brand-accent);
+}
+
+.league-name {
+  font-weight: lighter;
+  color: #fff;
+}
+
+.league-sport,
+.league-countries {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #fff;
+}
