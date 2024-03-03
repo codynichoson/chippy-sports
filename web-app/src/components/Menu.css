@@ -1,0 +1,36 @@
+.menu-bar {
+  background-color: var(
+    --brand-secondary
+  ); /* Background color using brand color variable */
+  color: #fff; /* Text color */
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+li {
+  margin: 0 15px; /* Adjust spacing between menu items */
+}
+
+a {
+  text-decoration: none;
+  color: #fff; /* Text color for unvisited links */
+  font-size: 16px; /* Adjust font size as needed */
+  font-weight: bold; /* Adjust font weight as needed */
+  transition: color 0.3s ease; /* Add a smooth color transition */
+}
+
+a:hover {
+  color: var(--brand-accent); /* Text color for links on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
