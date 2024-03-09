@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Header.css";
-import colors from "../colors";
+import "../styles/Header.css";
 
 function Header() {
   return (
-    <header style={{ backgroundColor: colors.primary, color: "#fff" }}>
+    <header>
       <Link to="/">
         <h1 className="header-text">CHIRP SPORTS</h1>
       </Link>

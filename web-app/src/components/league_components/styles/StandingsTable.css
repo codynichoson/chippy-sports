@@ -1,0 +1,68 @@
+.standings-table {
+  width: 60%;
+  margin: auto;
+  min-width: 800px;
+  max-width: 1200px;
+}
+
+.standings-table th {
+  border: none;
+  text-align: center;
+  font-size: 20px;
+  background-color: #082c5c;
+  height: 40px;
+  font-weight: 500;
+}
+
+.standings-table tr:nth-child(8) {
+  border-bottom: 3px solid green;
+}
+
+.standings-table th.club {
+  text-align: left;
+}
+
+.standings-table td {
+  border: none;
+  text-align: center;
+  background-color: white;
+}
+
+.standings-table td.logo {
+  width: 5%;
+}
+
+.standings-table td.name {
+  width: 20%;
+  text-align: left;
+}
+
+.standings-table th.rank,
+.standings-table th.played,
+.standings-table th.points,
+.standings-table th.percentage,
+.standings-table th.wins,
+.standings-table th.losses,
+.standings-table th.draws,
+.standings-table th.for,
+.standings-table th.goals-against {
+  /* Set width for each column from "Played" to "Goals Against" */
+  width: 7%;
+}
+
+.standings-table td.points {
+  /* Set a different background color for the points column (P) */
+  background-color: #ced5de;
+}
+
+.standings-table td.club {
+  /* Align the Club column data to the left */
+  text-align: left;
+}
+
+.standings-table img.logo {
+  /* Set styles for the logo image */
+  width: 30px;
+  height: 30px;
+  margin-right: 5px; /* Adjust spacing between logo and team name */
+}
