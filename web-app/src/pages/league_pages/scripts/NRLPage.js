@@ -1,23 +1,27 @@
 import React, { useState, useEffect } from "react";
-import "./NRLPage.css";
+import "../styles/NRLPage.css";
 
 const NRLPage = () => {
   const [standings, setStandings] = useState([]);
 
   useEffect(() => {
-    // Simulate fetching NRL standings data
-    // Replace this with actual API call or data source
     const fetchStandings = async () => {
-      try {
-        // Simulated standings data
-        const simulatedData = [
-          { id: 1, teamName: "Team A", wins: 10, losses: 5, ties: 2 },
-          { id: 2, teamName: "Team B", wins: 8, losses: 7, ties: 1 },
-          { id: 3, teamName: "Team C", wins: 12, losses: 3, ties: 0 },
-          // ... Include other teams
-        ];
+      const url =
+        "https://rugbyapi2.p.rapidapi.com/api/rugby/tournament/294/season/39630/standings/total";
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key":
+            "faef26d4c8msh413d0eeacead4cbp1a452ajsnffbad48f956c",
+          "X-RapidAPI-Host": "rugbyapi2.p.rapidapi.com",
+        },
+      };
 
-        setStandings(simulatedData);
+      try {
+        const response = await fetch(url, options);
+        const data = await response.json();
+        console.log("Fetched NRL standings data:", data);
+        setStandings(data?.standings?.[0]?.rows || []);
       } catch (error) {
         console.error("Error fetching NRL standings data:", error);
       }
@@ -32,28 +36,19 @@ const NRLPage = () => {
       <table className="standings-table">
         <thead>
           <tr>
+            <th>Ranking</th>
             <th>Team Name</th>
             <th>Wins</th>
             <th>Losses</th>
-            <th>Ties</th>
-            <th>Winning Percentage</th>
           </tr>
         </thead>
         <tbody>
           {standings.map((team) => (
             <tr key={team.id}>
-              <td>{team.teamName}</td>
+              <td>{team.position}</td>
+              <td>{team.team.name}</td>
               <td>{team.wins}</td>
               <td>{team.losses}</td>
-              <td>{team.ties}</td>
-              <td>
-                {(
-                  ((team.wins + team.ties) /
-                    (team.wins + team.losses + team.ties)) *
-                  100
-                ).toFixed(2)}
-                %
-              </td>
             </tr>
           ))}
         </tbody>

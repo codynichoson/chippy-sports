@@ -1,0 +1,16 @@
+.afl-page-container {
+  margin: auto;
+  padding-bottom: 200px;
+  background-color: black;
+}
+
+.afl-page-title {
+  margin: 0;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+}

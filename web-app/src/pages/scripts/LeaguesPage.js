@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./LeaguesPage.css"; // You can create a CSS file for styling
+import "../styles/LeaguesPage.css"; // You can create a CSS file for styling
 
 const LeaguesPage = () => {
   const [leagues, setLeagues] = useState([]);
