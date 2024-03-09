@@ -1,36 +1,26 @@
 .menu-bar {
-  background-color: var(
-    --brand-secondary
-  ); /* Background color using brand color variable */
-  color: #fff; /* Text color */
+  background-color: var(--brand-secondary);
+  height: 25px;
 }
 
 nav {
-  display: flex;
   justify-content: center;
   align-items: center;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
+  vertical-align: middle;
 }
 
 li {
-  margin: 0 15px; /* Adjust spacing between menu items */
+  margin: 0 15px;
 }
 
 a {
   text-decoration: none;
-  color: #fff; /* Text color for unvisited links */
-  font-size: 16px; /* Adjust font size as needed */
-  font-weight: bold; /* Adjust font weight as needed */
-  transition: color 0.3s ease; /* Add a smooth color transition */
+  color: var(--brand-accent);
+  font-size: 20px;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--brand-accent); /* Text color for links on hover */
-  text-decoration: underline; /* Add underline on hover */
+  color: white;
 }

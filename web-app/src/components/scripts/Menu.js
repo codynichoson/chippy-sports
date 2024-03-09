@@ -6,17 +6,15 @@ function Menu() {
   return (
     <header className="menu-bar">
       <nav>
-        <ul>
-          <li>
-            <Link to="/hub">Favorites</Link>
-          </li>
-          <li>
-            <Link to="/sports">Sports</Link>
-          </li>
-          <li>
-            <Link to="/leagues">Leagues</Link>
-          </li>
-        </ul>
+        <li>
+          <Link to="/hub">Favorites</Link>
+        </li>
+        <li>
+          <Link to="/sports">Sports</Link>
+        </li>
+        <li>
+          <Link to="/leagues">Leagues</Link>
+        </li>
       </nav>
     </header>
   );

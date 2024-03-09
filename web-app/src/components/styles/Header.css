@@ -1,6 +1,5 @@
 header {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--brand-primary);
   padding: 10px;
   text-align: center;
 }
@@ -18,10 +17,10 @@ nav li {
 }
 
 .header-text {
-  color: #fff; /* Text color */
-  transition: color 0.3s ease; /* Add a smooth color transition */
+  color: var(--brand-accent);
+  transition: color 0.3s ease;
 }
 
 .header-text:hover {
-  color: var(--brand-accent); /* Text color on hover */
+  color: var(--brand-accent);
 }
