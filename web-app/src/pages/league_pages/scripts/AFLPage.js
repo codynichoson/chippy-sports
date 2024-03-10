@@ -3,6 +3,7 @@ import StandingsTable from "../../../components/league_components/scripts/Standi
 import Schedule from "../../../components/league_components/scripts/Schedule";
 import LeagueMenuBar from "../../../components/league_components/scripts/LeagueMenuBar";
 import { Outlet, Route, Routes } from "react-router-dom";
+import { getAFLStandings, getAFLSchedule } from "../../../services/apiService";
 
 import "../styles/AFLPage.css";
 
@@ -13,18 +14,10 @@ const AFLPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch standings from the local API server
-        const standingsResponse = await fetch(
-          "http://localhost:3001/api/standings"
-        );
-        const standingsData = await standingsResponse.json();
+        const standingsData = await getAFLStandings();
         setStandings(standingsData);
 
-        // Fetch schedule from the local API server
-        const scheduleResponse = await fetch(
-          "http://localhost:3001/api/schedule"
-        );
-        const scheduleData = await scheduleResponse.json();
+        const scheduleData = await getAFLSchedule();
         setSchedule(scheduleData);
       } catch (error) {
         console.error("Error fetching data:", error);
