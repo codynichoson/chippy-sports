@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "National Football League",
+    "abbrev": "NFL",
+    "sport": "American Football",
+    "countries": ["USA"],
+    "logo": "/logos/nfl_logo.png",
+    "link": "/leagues/nfl"
+  },
+  {
+    "id": 2,
+    "name": "National Hockey League",
+    "abbrev": "NHL",
+    "sport": "Hockey",
+    "countries": ["USA", "Canada"],
+    "logo": "/logos/nhl_logo.png",
+    "link": "/leagues/nhl"
+  },
+  {
+    "id": 3,
+    "name": "National Basketball League",
+    "abbrev": "NBA",
+    "sport": "Basketball",
+    "countries": ["USA", "Canada"],
+    "logo": "/logos/nba_logo.png",
+    "link": "/leagues/nba"
+  },
+  {
+    "id": 4,
+    "name": "Major League Baseball",
+    "abbrev": "MLB",
+    "sport": "Baseball",
+    "countries": ["USA", "Canada"],
+    "logo": "/logos/mlb_logo.png",
+    "link": "/leagues/mlb"
+  },
+  {
+    "id": 5,
+    "name": "Major League Soccer",
+    "abbrev": "MLS",
+    "sport": "Soccer",
+    "countries": ["USA", "Canada"],
+    "logo": "/logos/mls_logo.png",
+    "link": "/leagues/mls"
+  },
+  {
+    "id": 6,
+    "name": "National Rugby League",
+    "abbrev": "NRL",
+    "sport": "Rugby League",
+    "countries": ["Australia", "New Zealand"],
+    "logo": "/logos/nrl_logo.png",
+    "link": "/leagues/nrl"
+  },
+  {
+    "id": 7,
+    "name": "Australian Football League",
+    "abbrev": "AFL",
+    "sport": "Australian Rules Football",
+    "countries": ["Australia"],
+    "logo": "/logos/afl_logo.png",
+    "link": "/leagues/afl"
+  }
+]

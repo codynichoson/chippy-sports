@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../styles/LeaguesPage.css"; // You can create a CSS file for styling
+import "../styles/LeaguesPage.css";
 
 const LeaguesPage = () => {
   const [leagues, setLeagues] = useState([]);
 
   useEffect(() => {
-    // Fetch league data from the backend
-    fetch("http://localhost:3001/leagues")
+    // Fetch league data locally
+    fetch("/data/leaguesData.json") // Assuming leaguesData.json is in the public folder
       .then((response) => response.json())
       .then((data) => {
-        console.log("Fetched league data:", data);
+        console.log("Fetched local league data:", data);
         setLeagues(data);
       })
-      .catch((error) => console.error("Error fetching league data:", error));
+      .catch((error) =>
+        console.error("Error fetching local league data:", error)
+      );
   }, []);
 
   // Sort leagues alphabetically by name
