@@ -5,6 +5,7 @@ import "../styles/Schedule.css";
 
 const Schedule = ({ schedule }) => {
   const [selectedTeam, setSelectedTeam] = useState(null);
+  const [selectedRound, setSelectedRound] = useState("all");
 
   const formatDateTime = (rawDate) => {
     const parsedDate = parse(rawDate, "yyyy-MM-dd HH:mm:ss", new Date());
@@ -36,15 +37,21 @@ const Schedule = ({ schedule }) => {
     18: "WBD",
   };
 
+  const allRounds = [...new Set(schedule.games.map((game) => game.roundname))];
+
   const handleTeamChange = (event) => {
     const selectedTeamId = event.target.value;
     setSelectedTeam(selectedTeamId === "all" ? null : selectedTeamId);
   };
 
+  const handleRoundChange = (event) => {
+    setSelectedRound(event.target.value);
+  };
+
   return (
     <div className="schedule-container">
       {/* Dropdown menu for team selection */}
-      <div>
+      <div className="dropdown-container">
         <label htmlFor="teamSelect">Select Team: </label>
         <select id="teamSelect" onChange={handleTeamChange}>
           <option value="all">All Teams</option>
@@ -56,17 +63,31 @@ const Schedule = ({ schedule }) => {
         </select>
       </div>
 
-      {/* Display games based on selected team */}
+      {/* Dropdown menu for round selection */}
+      <div className="dropdown-container">
+        <label htmlFor="roundSelect">Select Round: </label>
+        <select id="roundSelect" onChange={handleRoundChange}>
+          <option value="all">All Rounds</option>
+          {allRounds.map((roundName) => (
+            <option key={roundName} value={roundName}>
+              {roundName}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Display games based on selected team and round */}
       {schedule && schedule.games && schedule.games.length > 0 ? (
         <div>
           {schedule.games
             .filter(
               (game) =>
-                selectedTeam === null ||
-                (game.hteamid &&
-                  game.hteamid.toString() === selectedTeam.toString()) ||
-                (game.ateamid &&
-                  game.ateamid.toString() === selectedTeam.toString())
+                (selectedTeam === null ||
+                  (game.hteamid &&
+                    game.hteamid.toString() === selectedTeam.toString()) ||
+                  (game.ateamid &&
+                    game.ateamid.toString() === selectedTeam.toString())) &&
+                (selectedRound === "all" || game.roundname === selectedRound)
             )
 
             .reduce((rounds, game) => {

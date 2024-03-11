@@ -82,11 +82,18 @@ label {
   text-align: center; /* Center the label text */
 }
 
-#teamSelect {
+.dropdown-container {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+}
+
+#teamSelect,
+#roundSelect {
   padding: 10px; /* Increase padding for a larger dropdown */
   margin: 10px auto; /* Center the dropdown horizontally */
   font-size: 20px; /* Increase font size for better readability */
-  width: 50%; /* Make the dropdown take 50% width */
+  width: 95%; /* Make the dropdown take 50% width */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   text-align: center; /* Center the dropdown text */
 }
